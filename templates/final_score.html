@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+    
+            html {
+                display: table;
+                margin: auto;
+            }
+            
+            body {
+                background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),url({{.Background_Image}});
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                display: table-cell;
+                vertical-align: middle;
+            }
+    
+            h1.head {
+                color: blue
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{.Title}}</h1>
+        <h2>Total Score is: {{.Total}}</h2>
+        <button id="Retry"">Retry</button>
+        <script>
+            document.getElementById("Retry").onclick = async (e) => {
+                console.log(window.location);
+                var req = await fetch("\gotostart").then(r => r.json())
+                window.location = window.location.href;
+                console.log(req)
+            }
+        </script>
+         <button id="End"">End Quiz</button>
+         <script>
+             document.getElementById("End").onclick = async (e) => {
+                 console.log(window.location);
+                 var req = await fetch("\gotoend")
+                //  window.location = window.location.href;
+                //  console.log(req)
+             }
+         </script>
+        
+    </body>
+</html>

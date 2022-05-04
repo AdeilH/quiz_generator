@@ -1,0 +1,44 @@
+{
+    "title": "Go Generics",
+    "quiz": [
+        {
+            "Question": "Which Go Version added Generics Support?",
+            "Options": [
+                "1.14",
+                "1.18",
+                "1.22",
+                "1.26"
+            ],
+            "Answer": "1.18"
+        },
+        {
+            "Question": "What are Constraints used for in generics?",
+            "Options": [
+                "Only to be used with types specified",
+                "Only to be used with certain variable",
+                "Better to use with certain types",
+                "Don't use this"
+            ],
+            "Answer": "Only to be used with types specified"
+        },
+        {
+            "Question": "What does type Inference do in go?",
+            "Options": [
+                "Infers type from variable type",
+                "Infers type from name of variables",
+                "Infers type from defined constraints",
+                "Infers type by matching types of arguments"
+            ],
+            "Answer": "Infers type by matching types of arguments"
+        },
+        {
+            "Question": "Can type inference fail at compile time?",
+            "Options": [
+                "Yes",
+                "No"
+            ],
+            "Answer": "Yes"
+        }
+
+    ]
+}

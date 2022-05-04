@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+    
+            html {
+                display: table;
+                margin: auto;
+            }
+            
+            body {
+                background-image: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),url({{.Background_Image}});
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                display: table-cell;
+                vertical-align: middle;
+            }
+    
+            h1.head {
+                color: blue
+            }
+        </style>
+    </head>
+
+<body>
+    <h1>{{.Title}}</h1>
+    <h2>{{.Question}}</h2>
+    <ul>
+        <form method="POST">
+            {{range $i, $e := .Options}}
+            <input type="radio" name="option" value="{{.}}">{{.}}<br />
+            {{end}}
+            <input type="submit">
+        </form>
+    </ul>
+    <button id="Next"">Next Question</button>
+    <script>
+        document.getElementById("Next").onclick = async (e) => {
+            var req = await fetch("\gotonext").then(r => r.json())
+            window.location = window.location.href;
+            // document.getElementById("res").innerHTML = req.Reason
+            console.log(req)
+        }
+    </script>
+</body>
+</html>
